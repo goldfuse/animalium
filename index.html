@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Datagroup Europe Environment">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='/bootstrap-3.3.6/css/bootstrap.css' rel='stylesheet' type='text/css'>
+    <link href='/bootstrap-3.3.6/css/bootstrap-theme2.css' rel='stylesheet' type='text/css'>
+    <link href='/css/shell.css' rel='stylesheet' type='text/css'>
+    <link href='/css/app.css' rel='stylesheet' type='text/css'>
+    <title>VCS-ui</title>
+     <style>
+     </style>
+  </head>
+
+ <body role="document" class="background-dark">
+   <!--
+     MENU
+     to put in an widget and make it globally available
+   -->
+   <div id="mySidenav" class="sidenav">
+     <span style="" onclick="closeNav();return false;" class="closebtn glyphicon glyphicon-menu-left"></span>
+      <a href="/pages/flows.html#">Flows</a>
+      <a href="/pages/suppliers.html#">Stel assortiment samen</a>
+   </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        </div>
+        <div id="navbar" class="">
+          <div class="nav navbar-nav navbar-left">
+            <span style="margin-top:15px;cursor:pointer;" onclick="openNav();return false;" class="glyphicon glyphicon-menu-hamburger">
+          </div>
+          <div class="nav navbar-nav navbar-right">
+            <span id="MyName">My Name</span>
+            <a style="color:#eee;" title="uitloggen" href="/pages/logout.html"><span style="margin-top:15px;" class="glyphicon glyphicon-log-out"></span></a>
+         </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- END MENU -->
+    <div class="container">
+      <br/><br/><br/><br/>
+   </div>
+    <script src="/vendor/require.js"></script>
+    <script>
+
+    require.config({
+      paths : {
+        'modules' : '/modules',
+        'vendor' : '/vendor',
+        'node_modules' : '/node_modules',
+        'lib' : '/lib',
+        'app' : '/app'
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      require([
+          'app/shellCommand',
+          'lib/shell'
+          ], function(commands, shell){
+        shell.setCommandController(commands);
+      })
+    });
+    </script>
+    <script src="/vendor/jquery.js"></script>
+    <script src="/bootstrap-3.3.6/js/bootstrap.js"></script>
+  </body>
+</html>
